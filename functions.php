@@ -93,6 +93,8 @@ add_action( 'widgets_init', 'tk_knight_widgets_init' );
  */
 function tk_knight_scripts() {
 	wp_enqueue_style( 'tk-knight-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'google-fonts', tk_knight_get_google_fonts(), array(), null );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.css', null, '4.1.0' );
 
 	wp_enqueue_script( 'tk-knight-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -103,6 +105,28 @@ function tk_knight_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tk_knight_scripts' );
+
+/**
+ * Enqueue scripts and styles
+ */
+function tk_knight_admin_scripts() {
+	wp_enqueue_style( 'google-fonts', tk_knight_get_google_fonts(), array(), null );
+
+}
+add_action( 'admin_enqueue_scripts', 'tk_knight_admin_scripts' );
+
+/**
+ * Add Google Fonts (phew, there are a lot in this design)
+ *
+ * Whenever we use our custom fonts, we will remove WordPress default opens sans
+ */
+function tk_knight_get_google_fonts(){
+	wp_deregister_style( 'open-sans' );
+
+	$font_url = add_query_arg( 'family', urlencode( 'Montserrat:400,700|Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' ), "//fonts.googleapis.com/css" );
+
+	return $font_url;
+}
 
 /**
  * Implement the Custom Header feature.
