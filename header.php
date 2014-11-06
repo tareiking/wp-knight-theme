@@ -46,7 +46,7 @@
 	</header><!--header-end-->
 
 
-	<nav class="main-nav-outer" id="test"><!--main-nav-start-->
+	<nav class="main-nav-outer" id="main-menu"><!--main-nav-start-->
 		<div class="container">
 
 			<!-- #todo : menu has a logo in the middle of the menu, need to add this -->
