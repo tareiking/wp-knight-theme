@@ -10,17 +10,22 @@
     });
 
     // WOW Animations
-    wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       100
-      }
-    );
-    wow.init();
-    document.getElementById('').onclick = function() {
-      var section = document.createElement('section');
-      section.className = 'wow fadeInDown';
-      this.parentNode.insertBefore(section, this);
+
+
+      wow = new WOW(
+        {
+          animateClass: 'animated',
+          offset:       100
+        }
+      );
+      wow.init();
+
+    if ( $('.section').length ) {
+      document.getElementById('').onclick = function() {
+        var section = document.createElement('section');
+        section.className = 'wow fadeInDown';
+        this.parentNode.insertBefore(section, this);
+      };
     };
 
     // Scroll to section : Only applies to single-page templates
