@@ -124,7 +124,10 @@ add_action( 'admin_enqueue_scripts', 'tk_knight_admin_scripts' );
  * Whenever we use our custom fonts, we will remove WordPress default opens sans
  */
 function tk_knight_get_google_fonts(){
-	wp_deregister_style( 'open-sans' );
+
+	if ( ! is_admin() ) {
+		wp_deregister_style( 'open-sans' );
+	}
 
 	$font_url = add_query_arg( 'family', urlencode( 'Montserrat:400,700|Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' ), "//fonts.googleapis.com/css" );
 
