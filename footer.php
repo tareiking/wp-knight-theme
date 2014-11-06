@@ -11,13 +11,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'tk-knight' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'tk-knight' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'tk-knight' ), 'WP Knight Theme', '<a href="http://tarei.me" rel="designer">Tarei King</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="container site-info">
+			<div class="footer-logo"><a href="#"><img src="<?php echo get_template_directory_uri() ?>/images/footer-logo.png" alt=""></a></div>
+			<span class="copyright">
+				<?php printf( __( 'Theme: %1$s by %2$s.', 'tk-knight' ), 'WP Knight Theme', '<a href="http://tarei.me" rel="designer">Tarei King</a>' ); ?>
+			</span>
+		</div>
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
