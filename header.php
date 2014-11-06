@@ -20,14 +20,32 @@
 <?php wp_head(); ?>
 
 <!--[if lt IE 9]>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/respond-1.1.0.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/html5element.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/respond-1.1.0.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5element.js"></script>
 <![endif]-->
 
 </head>
 
 <body <?php body_class(); ?>>
+
+
+	<div style="overflow:hidden;">
+	<header class="header" id="header"><!--header-start-->
+		<div class="container">
+			<figure class="logo animated fadeInDown delay-07s">
+				<a href="#"><img src="img/logo.png" alt=""></a>
+			</figure>
+			<h1 class="animated fadeInDown delay-07s"><?php bloginfo( 'name' ); ?></h1>
+			<ul class="we-create animated fadeInUp delay-1s">
+				<li><?php bloginfo( 'description' ); ?></li>
+			</ul>
+				<a class="link animated fadeInUp delay-1s" href="#">TODO</a>
+		</div>
+	</div>
+	</header><!--header-end-->
+
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'tk-knight' ); ?></a>
 
