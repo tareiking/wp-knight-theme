@@ -92,7 +92,10 @@ add_action( 'widgets_init', 'tk_knight_widgets_init' );
  * Enqueue scripts and styles.
  */
 function tk_knight_scripts() {
-	wp_enqueue_style( 'tk-knight-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'tk-knight-style', get_stylesheet_uri(), array( 'bootstrap' ) );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.0.3' );
+	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css', array(), '3.0.3' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array( 'bootstrap', 'responsive' ), '3.0.3' );
 	wp_enqueue_style( 'google-fonts', tk_knight_get_google_fonts(), array(), null );
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.css', null, '4.1.0' );
 
