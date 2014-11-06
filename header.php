@@ -34,7 +34,7 @@
 	<header class="header" id="header"><!--header-start-->
 		<div class="container">
 			<figure class="logo animated fadeInDown delay-07s">
-				<a href="#"><img src="img/logo.png" alt=""></a>
+				<a href="#"><img src=" <?php echo get_template_directory_uri() ?>/images/logo.png" alt=""></a><!-- #todo : custom logo -->
 			</figure>
 			<h1 class="animated fadeInDown delay-07s"><?php bloginfo( 'name' ); ?></h1>
 			<ul class="we-create animated fadeInUp delay-1s">
