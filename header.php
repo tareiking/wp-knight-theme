@@ -48,6 +48,8 @@
 
 	<nav class="main-nav-outer" id="test"><!--main-nav-start-->
 		<div class="container">
+
+			<!-- #todo : menu has a logo in the middle of the menu, need to add this -->
 			<?php wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
