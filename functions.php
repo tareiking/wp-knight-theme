@@ -103,6 +103,8 @@ function tk_knight_scripts() {
 
 	wp_enqueue_script( 'tk-knight-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'tk-knight-main', get_template_directory_uri() . '/js/main.js', array( 'classie' ), '1.0', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
