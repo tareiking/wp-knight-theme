@@ -46,6 +46,22 @@
 	</header><!--header-end-->
 
 
+	<nav class="main-nav-outer" id="test"><!--main-nav-start-->
+		<div class="container">
+			<?php wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'container'      => false,
+					'menu_class'     => 'main-nav',
+					'fallback_cb'    => '',
+				)
+			); ?>
+
+			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+		</div>
+	</nav><!--main-nav-end-->
+
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'tk-knight' ); ?></a>
 
