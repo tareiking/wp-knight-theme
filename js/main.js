@@ -24,6 +24,8 @@
     };
 
     // Scroll to section : Only applies to single-page templates
+    // # TODO : Implement
+
     // $(window).load(function(){
     //   $('.main-nav li a').bind('click',function(event){
     //     var $anchor = $(this);
