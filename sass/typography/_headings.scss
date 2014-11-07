@@ -1,3 +1,36 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+
+h1.hero-heading {
+	font-family: $font__header;
+	font-size: 50px;
+	font-weight:400;
+	letter-spacing: -1px;
+	margin:0 0 22px 0;
+}
+h1,
+h2{
+	font-size:34px;
+	color:#222222;
+	font-family: $font__header;
+	font-weight:700;
+	letter-spacing: -1px;
+	margin:0 0 15px 0;
+	text-transform:uppercase;
+}
+h3{
+	font-family: $font__header;
+	color:#222222;
+	font-size:16px;
+	margin:0 0 5px 0;
+	text-transform:uppercase;
+	font-weight:400;
+}
+h6{
+	font-size:16px;
+	color:#888888;
+	font-family: $font__main;
+	font-weight:400;
+	margin:0 0 60px 0;
+}

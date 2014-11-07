@@ -13,6 +13,21 @@ code {
 	white-space: inherit;
 }
 
+/* Primary Styles
+---------------------------------*/
+body {
+	background:#fff;
+	font-family: $font__main;
+	font-size:14px;
+	font-weight:normal;
+	color:#888888;
+	margin:0;
+}
+p{
+	line-height:24px;
+	margin:0;
+}
+
 @import "headings";
 
 @import "copy";
