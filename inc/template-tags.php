@@ -163,3 +163,21 @@ function tk_knight_category_transient_flusher() {
 }
 add_action( 'edit_category', 'tk_knight_category_transient_flusher' );
 add_action( 'save_post',     'tk_knight_category_transient_flusher' );
+
+
+/**
+ * Isotope.js sorting requires a specific format either '.string' or 'string'
+ *
+ * Used in content-portfolio.php
+ */
+function tk_knight_category_to_isotope_string( $string = '', $return_dot = true ) {
+	$isotope_string = preg_replace('/\s+/', '', $string);
+	$isotope_string = strtolower( $isotope_string );
+
+
+	if ( true == $return_dot ) {
+		$isotope_string = '.' . $isotope_string;
+	}
+
+	return $isotope_string;
+}

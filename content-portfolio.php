@@ -55,7 +55,7 @@
 
 			foreach ($folio_categories as $cat_name ) { ?>
 				<li>
-					<a href="#" data-filter="<?php echo $cat_name; ?>"><?php echo $cat_name;  ?></a>
+					<a href="#" data-filter="<?php echo tk_knight_category_to_isotope_string( $cat_name ); ?>"><?php echo $cat_name;  ?></a>
 				</li>
 			<?php } ?>
 
@@ -77,7 +77,7 @@
 
 		?>
 
-		<div class="Portfolio-box <?php echo $first_category; ?>">
+		<div class="Portfolio-box <?php echo tk_knight_category_to_isotope_string( $first_category, false ); ?>">
 			<a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic1.jpg" alt=""></a>
 			<h3><?php the_title(); ?></h3>
 			<p><?php echo $first_category; ?></p>
