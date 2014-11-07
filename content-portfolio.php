@@ -61,39 +61,30 @@
 
 		</ul>
 	</div>
+	</div><!-- .container -->
 
-	</div>
 	<div class="portfolioContainer wow fadeInUp delay-04s">
-		<div class=" Portfolio-box printdesign">
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic1.jpg" alt=""></a>	
-			<h3>Foto Album</h3>
-			<p>Print Design</p>
+
+	<!-- Reset the loop, we are running again for actual items -->
+	<?php $folio_query->rewind_posts(); ?>
+
+		<!-- the loop -->
+		<?php while ( $folio_query->have_posts() ) : $folio_query->the_post();
+
+			// Let's get the same category information
+			$cat =  get_the_category();
+			$first_category = $cat[0]->cat_name;
+
+		?>
+
+		<div class="Portfolio-box <?php echo $first_category; ?>">
+			<a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic1.jpg" alt=""></a>
+			<h3><?php the_title(); ?></h3>
+			<p><?php echo $first_category; ?></p>
 		</div>
-		<div class="Portfolio-box webdesign">
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic2.jpg" alt=""></a>	
-			<h3>Luca Theme</h3>
-			<p>Web Design</p>
-		</div>
-		<div class=" Portfolio-box branding">
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic3.jpg" alt=""></a>	
-			<h3>Uni Sans</h3>
-			<p>Branding</p>
-		</div>
-		<div class=" Portfolio-box photography" >
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic4.jpg" alt=""></a>	
-			<h3>Vinyl Record</h3>
-			<p>Photography</p>
-		</div>
-		<div class=" Portfolio-box branding">
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic5.jpg" alt=""></a>	
-			<h3>Hipster</h3>
-			<p>Branding</p>
-		</div>
-		<div class=" Portfolio-box photography">
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic6.jpg" alt=""></a>	
-			<h3>Windmills</h3>
-			<p>Photography</p>
-		</div>
+
+		<?php endwhile; ?>
+
 	</div>
 </section><!--main-section-end-->
 
