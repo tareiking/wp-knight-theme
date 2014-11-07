@@ -21,6 +21,14 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
+				<!-- Isotope / Posts Categories -->
+
+				<?php
+
+					get_template_part( 'content', 'portfolio' );
+
+				?>
+
 			</main><!-- #main -->
 	</div><!-- #primary -->
 
