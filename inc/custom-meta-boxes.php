@@ -93,7 +93,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 					),
 					array(
 						'name'    => __( 'Content', 'tk-knight' ),
-						'id'      => $prefix . 'test_wysiwyg',
+						'id'      => $prefix . 'content',
 						'type'    => 'wysiwyg',
 						'options' => array( 'textarea_rows' => 10, ),
 					),
