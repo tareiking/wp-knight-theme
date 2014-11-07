@@ -33,7 +33,7 @@ $sections = get_post_meta( get_the_ID(), '' . '_cmb2_repeat_group', true );
 
 		<?php if ( $imagealignment == 'alignright' ) { ?>
 
-		<section class="section content-section"><!--main-section-start-->
+		<section class="main-section content-section"><!--main-section-start-->
 			<div class="container">
 				<h2 class="text-center"><?php echo $title; ?></h2>
 				<h6 class="text-center"><?php echo $desc; ?></h6>
@@ -52,7 +52,7 @@ $sections = get_post_meta( get_the_ID(), '' . '_cmb2_repeat_group', true );
 
 		<?php } else { ?>
 
-		<section class="section content-section">
+		<section class="main-section content-section">
 			<div class="container">
 				<div class="row">
 					<figure class="col-lg-5 col-sm-4 wow fadeInLeft">
