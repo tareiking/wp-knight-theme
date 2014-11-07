@@ -9,6 +9,10 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+code {
+	white-space: inherit;
+}
+
 @import "headings";
 
 @import "copy";
