@@ -20,6 +20,31 @@ TODO
 - ^^ use to update folio text
 - set filters for folio posts (sticky, category etc)
 
+3. pages:
+
+- tags, author, posts, post formats
+- sidebar, widget area
+- 404
+
+4. sections:
+
+- header section
+-- show only on frontpage?
+
+5. misc:
+- menu support dropdown?
+- create dynamic menu for single pages, based on sections included in page-content
+- ^^ create page template to support above
+
+6. customiser options:
+- custom background (used in header and footer)
+- logo image (used in header)
+- small logo (used in menu)
+- link colors
+- header colors
+- no font options
+
+
 LICENSING INFORMATION
 ========================
 
