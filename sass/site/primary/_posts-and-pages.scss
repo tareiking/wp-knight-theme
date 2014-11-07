@@ -26,3 +26,11 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.main-section {
+	padding: 90px 0 110px;
+}
+
+.main-section + .main-section {
+	background-color: #fafafa;
+}
