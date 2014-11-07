@@ -47,6 +47,7 @@
 
 
 	<nav class="main-nav-outer" id="main-menu"><!--main-nav-start-->
+		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'tk-knight' ); ?></a>
 		<div class="container">
 
 			<!-- #todo : menu has a logo in the middle of the menu, need to add this -->
