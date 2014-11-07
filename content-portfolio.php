@@ -6,7 +6,21 @@
  */
 ?>
 
+<?php
 
+	// Get uncategorized slug id
+	$uncategorized = get_cat_id( 'uncategorized' );
+	// Initially, lets  get a loop of posts and use their categories
+	$args = array(
+		'category__not_in'     => $uncategorized,
+		'posts_per_page'       => 10,
+		'ignore_sticky_posts'  => 'true',
+		);
+
+	$folio_query = new WP_Query( $args );
+?>
+
+<?php if ( $folio_query->have_posts() ) : ?>
 
 <section class="main-section" id="Portfolio"><!--main-section-start-->
 	<div class="container">
@@ -56,3 +70,5 @@
 		</div>
 	</div>
 </section><!--main-section-end-->
+
+<?php endif; ?>
