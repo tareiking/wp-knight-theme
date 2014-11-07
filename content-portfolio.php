@@ -2,6 +2,8 @@
 /**
  * The template used for displaying portfolio items in a isotope filter
  *
+ * This template currently gets the 5 most popular categories based on post count and shows them :)
+ *
  * @package WP Knight Theme
  */
 ?>
