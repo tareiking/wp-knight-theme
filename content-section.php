@@ -7,7 +7,11 @@
 
 $sections = get_post_meta( get_the_ID(), '' . '_cmb2_repeat_group', true );
 
-	if ( $sections ) {
+if ( count ( $sections ) == 1 ) { // There is always one element in the array
+
+	get_template_part( 'content', 'page' );
+
+} else {
 
 		foreach ( (array) $sections as $key => $section ) {
 
@@ -78,8 +82,4 @@ $sections = get_post_meta( get_the_ID(), '' . '_cmb2_repeat_group', true );
 
 	<?php } ?>
 
-<?php } else { // load the normal page content
-
-	get_template_part( 'content', 'page' );
-
-} ?>
+<?php } ?>
