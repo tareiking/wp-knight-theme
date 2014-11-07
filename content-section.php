@@ -31,10 +31,32 @@ if ( $sections ) {
 			$content = $section['_cmb2_content'];
 	} ?>
 
+<?php if ( $imagealignment == 'alignright' ) { ?>
 
-<?php
+<section class="section"><!--main-section-start-->
+	<div class="container">
+		<h2 class="text-center"><?php echo $title; ?></h2>
+		<h6 class="centered"><?php echo $desc; ?></h6>
 
-} else { // load the normal page content
+		<div class="row">
+			<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
+				<?php echo $content; ?>
+			</div>
+			<figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
+				<?php echo $img; ?>
+			</figure>
+		</div>
+
+	</div>
+</section>
+
+<?php } else { ?>
+
+
+<?php } ?>
+
+
+<?php } else { // load the normal page content
 
 	get_template_part( 'content', 'page' );
 
