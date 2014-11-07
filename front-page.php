@@ -11,11 +11,9 @@
 
 get_header(); ?>
 
-	<div id="content" class="hfeed site-content container">
+	<div id="content" class="hfeed site-content">
 
 	<div id="primary" class="content-area">
-		<div class="col-xs-12 col-md-12">
-
 			<main id="main" class="site-main" role="main">
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -24,8 +22,6 @@ get_header(); ?>
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
-
-		</div><!-- .col -->
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>
