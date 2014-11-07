@@ -66,6 +66,11 @@ function tk_knight_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	/**
+	 * Add default image sizes
+	 */
+	add_image_size( 'folio-isotope', 360, 270, true );
 }
 endif; // tk_knight_setup
 add_action( 'after_setup_theme', 'tk_knight_setup' );

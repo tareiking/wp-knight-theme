@@ -78,7 +78,15 @@
 		?>
 
 		<div class="Portfolio-box <?php echo tk_knight_category_to_isotope_string( $first_category, false ); ?>">
-			<a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic1.jpg" alt=""></a>
+			<a href="<?php the_permalink(); ?>">
+
+			<?php if ( has_post_thumbnail() ) { ?>
+				<?php the_post_thumbnail( 'folio-isotope' ); ?>
+			<?php } else { ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio-pic1.jpg" alt="">
+			<?php } ?>
+
+			</a>
 			<h3><?php the_title(); ?></h3>
 			<p><?php echo $first_category; ?></p>
 		</div>
