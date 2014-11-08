@@ -20,6 +20,8 @@
 		'orderby'              => 'count',
 		);
 
+	$args = apply_filters( 'tk_knight_filter_portfolio_query', $args );
+
 	$folio_query = new WP_Query( $args );
 
 	$folio_categories = array();
