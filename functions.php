@@ -171,3 +171,17 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Custom Meta Boxes file.
  */
 require get_template_directory() . '/inc/custom-meta-boxes.php';
+
+function tk_knight_filter_folio(){
+
+	$args = array(
+		'posts_per_page'       => 5,
+		'ignore_sticky_posts'  => 'true',
+		'orderby'              => 'count',
+	);
+
+	return $args;
+
+}
+
+add_filter( 'tk_knight_filter_portfolio_query', 'tk_knight_filter_folio' );
