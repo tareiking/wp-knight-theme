@@ -21,11 +21,25 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-				<!-- Isotope / Posts Categories -->
 
 				<?php
+					// Show additional page partials if chosen by user
+					$display_options = get_post_meta( get_the_ID(), '_cmb2_show_additional_sections_checkbox', true );
 
-					get_template_part( 'content', 'portfolio' );
+					if ( in_array( 'show_portfolio', $display_options ) )
+						get_template_part( 'content', 'portfolio' );
+
+
+					if ( in_array( 'show_testimonials', $display_options ) )
+						get_template_part( 'content', 'testimonials' );
+
+
+					if ( in_array( 'show_logo_bar', $display_options ) )
+						get_template_part( 'content', 'logobar' );
+
+
+					if ( in_array( 'show_team', $display_options ) )
+						get_template_part( 'content', 'team' );
 
 				?>
 
