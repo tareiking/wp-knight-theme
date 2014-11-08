@@ -55,7 +55,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 			array(
 				'id'          => $prefix . 'repeat_group',
 				'type'        => 'group',
-				'description' => __( 'Sections are mind-blowing. Just add as many sections as you like and they will be displayed on this page on-top of each other', 'tk-knight' ),
+				'description' => __( 'Sections with animated left / right image + content. Must have an image, no full-width items are avaialble here', 'tk-knight' ),
 				'options'     => array(
 					'group_title'   => __( 'Section {#}', 'tk-knight' ), // {#} gets replaced by row number
 					'add_button'    => __( 'Add Another Section', 'tk-knight' ),
@@ -99,6 +99,31 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 					),
 				),
 			),
+		),
+	);
+
+	/**
+	 * Repeatable Field Groups
+	 */
+	$meta_boxes['page_options'] = array(
+		'id'           => 'page_options',
+		'title'        => __( 'Page options', 'tk-knight' ),
+		'object_types' => array( 'page', ),
+		'context'      => 'side',
+		'priority'     => 'default',
+		'fields'      => array(
+			array(
+				'name'    => __( 'Show the following sections', 'cmb2' ),
+				'id'      => $prefix . 'show_additional_sections_checkbox',
+				'type'    => 'multicheck',
+				'select_all_button' => false,
+				'options' => array(
+					'show_portfolio' => __( 'Portfolio', 'cmb2' ),
+					'show_testimonials' => __( 'Testimonials', 'cmb2' ),
+					'show_logos' => __( 'Logo Bar', 'cmb2' ),
+					'show_team' => __( 'Team', 'cmb2' ),
+			),
+		),
 		),
 	);
 
