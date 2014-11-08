@@ -120,7 +120,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 				'options' => array(
 					'show_portfolio' => __( 'Portfolio', 'cmb2' ),
 					'show_testimonials' => __( 'Testimonials', 'cmb2' ),
-					'show_logos' => __( 'Logo Bar', 'cmb2' ),
+					'show_logobar' => __( 'Logo Bar', 'cmb2' ),
 					'show_team' => __( 'Team', 'cmb2' ),
 			),
 		),
