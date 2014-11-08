@@ -31,10 +31,10 @@ get_header(); ?>
 
 
 					if ( in_array( 'show_testimonials', $display_options ) )
-						get_template_part( 'content', 'testimonials' );
+						get_template_part( 'content', 'testimonial' );
 
 
-					if ( in_array( 'show_logo_bar', $display_options ) )
+					if ( in_array( 'show_logobar', $display_options ) )
 						get_template_part( 'content', 'logobar' );
 
 
