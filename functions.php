@@ -185,3 +185,22 @@ function tk_knight_filter_folio(){
 }
 
 add_filter( 'tk_knight_filter_portfolio_query', 'tk_knight_filter_folio' );
+
+/**
+ * Hide editor for showcase page template
+ *
+ */
+add_action( 'admin_init', 'tk_knight_hide_editor' );
+
+function tk_knight_hide_editor() {
+
+	$post_id = $_GET[ 'post' ] ? $_GET[ 'post' ] : $_POST[ 'post_ID' ] ;
+	if( !isset( $post_id ) ) return;
+
+	$template_file = get_post_meta( $post_id, '_wp_page_template', true );
+
+	if( $template_file == 'templates/showcase.php' ){
+		remove_post_type_support( 'page', 'editor' );
+	}
+
+}
