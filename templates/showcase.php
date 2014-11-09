@@ -1,8 +1,8 @@
 <?php
 /**
- * Static front-page template
+ * Template Name: Showcase Page
  *
- * Designed to show page sections which are specified in the static front-page.
+ * Showcase pages combine sections into a smooth flowing, animated single page view.
  *
  * @todo Add support for page sections to default page views'
  *
