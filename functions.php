@@ -194,6 +194,9 @@ add_action( 'admin_init', 'tk_knight_hide_editor' );
 
 function tk_knight_hide_editor() {
 
+	if ( ! class_exists( 'cmb2_bootstrap_200beta' ) )
+		return; // if we don't have custom meta boxes, we have no method of data entry
+
 	$post_id = $_GET[ 'post' ] ? $_GET[ 'post' ] : $_POST[ 'post_ID' ] ;
 	if( !isset( $post_id ) ) return;
 
