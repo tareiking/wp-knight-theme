@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:  CMB2 (beta)
+ * Plugin Name:  CMB2
  * Plugin URI:   https://github.com/WebDevStudios/CMB2
  * Description:  CMB2 will create metaboxes and forms with custom fields that will blow your mind.
  * Author:       WebDevStudios
@@ -11,13 +11,12 @@
  *               Bill Erickson (@billerickson / billerickson.net)
  *               Andrew Norcross (@norcross / andrewnorcross.com)
  *
- * Version:      2.0.0
+ * Version:      2.0.1
  *
  * Text Domain:  cmb2
  * Domain Path:  languages
- */
-
-/**
+ *
+ *
  * Released under the GPL license
  * http://www.opensource.org/licenses/gpl-license.php
  *
@@ -43,19 +42,19 @@
                   or things might explode!
 *************************************************************************/
 
-if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
+if ( ! class_exists( 'cmb2_bootstrap_201', false ) ) {
 
 	/**
 	 * Check for newest version of CMB
 	 */
-	class cmb2_bootstrap_200beta {
+	class cmb2_bootstrap_201 {
 
 		/**
 		 * Current version number
 		 * @var   string
 		 * @since 1.0.0
 		 */
-		const VERSION = '2.0.0';
+		const VERSION = '2.0.1';
 
 		/**
 		 * Current version hook priority
@@ -64,7 +63,7 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 		 * @var   int
 		 * @since 2.0.0
 		 */
-		const PRIORITY = 9999;
+		const PRIORITY = 9998;
 
 		public static $single = null;
 
@@ -94,12 +93,22 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 		 * @since  2.0.0
 		 */
 		public function l10ni18n() {
-			$locale = apply_filters( 'plugin_locale', get_locale(), 'cmb2' );
-			load_textdomain( 'cmb2', WP_LANG_DIR . '/cmb2/cmb2-' . $locale . '.mo' );
-			load_plugin_textdomain( 'cmb2', false, dirname( __FILE__ ) . '/languages/' );
+			$loaded = load_plugin_textdomain( 'cmb2', false, '/languages/' );
+			if ( ! $loaded ) {
+				$loaded = load_muplugin_textdomain( 'cmb2', '/languages/' );
+			}
+			if ( ! $loaded ) {
+				$loaded = load_theme_textdomain( 'cmb2', '/languages/' );
+			}
+
+			if ( ! $loaded ) {
+				$locale = apply_filters( 'plugin_locale', get_locale(), 'cmb2' );
+				$mofile = dirname( __FILE__ ) . '/languages/cmb2-'. $locale .'.mo';
+				load_textdomain( 'cmb2', $mofile );
+			}
 		}
 
 	}
-	cmb2_bootstrap_200beta::go();
+	cmb2_bootstrap_201::go();
 
 } // class exists check

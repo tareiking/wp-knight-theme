@@ -11,10 +11,11 @@
 /**
  * Get the bootstrap! If using the plugin from wordpress.org, REMOVE THIS!
  */
-if ( file_exists(  __DIR__ .'/cmb2/init.php' ) ) {
-	require_once  __DIR__ .'/cmb2/init.php';
-} elseif ( file_exists(  __DIR__ .'/CMB2/init.php' ) ) {
-	require_once  __DIR__ .'/CMB2/init.php';
+
+if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
+	require_once dirname( __FILE__ ) . '/cmb2/init.php';
+} elseif ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
+	require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
 
 /**
@@ -30,6 +31,20 @@ function cmb2_hide_if_no_cats( $field ) {
 		return false;
 	}
 	return true;
+}
+
+/**
+ * Conditionally displays a message if the $post_id is 2
+ *
+ * @param  array             $field_args Array of field parameters
+ * @param  CMB2_Field object $field      Field object
+ */
+function cmb2_before_row_if_2( $field_args, $field ) {
+	if ( 2 == $field->object_id ) {
+		echo '<p>Testing <b>"before_row"</b> parameter (on $post_id 2)</p>';
+	} else {
+		echo '<p>Testing <b>"before_row"</b> parameter (<b>NOT</b> on $post_id 2)</p>';
+	}
 }
 
 add_filter( 'cmb2_meta_boxes', 'cmb2_sample_metaboxes' );
@@ -54,7 +69,8 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
-		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
 		'fields'        => array(
 			array(
 				'name'       => __( 'Test Text', 'cmb2' ),
@@ -149,7 +165,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 				'desc'    => __( 'field description (optional)', 'cmb2' ),
 				'id'      => $prefix . 'test_colorpicker',
 				'type'    => 'colorpicker',
-				'default' => '#ffffff'
+				'default' => '#ffffff',
 			),
 			array(
 				'name' => __( 'Test Text Area', 'cmb2' ),
@@ -274,6 +290,17 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 				'desc' => __( 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.', 'cmb2' ),
 				'id'   => $prefix . 'test_embed',
 				'type' => 'oembed',
+			),
+			array(
+				'name'         => 'Testing Field Parameters',
+				'id'           => $prefix . 'test_parameters',
+				'type'         => 'text',
+				'before_row'   => 'cmb2_before_row_if_2', // callback
+				'before'       => '<p>Testing <b>"before"</b> parameter</p>',
+				'before_field' => '<p>Testing <b>"before_field"</b> parameter</p>',
+				'after_field'  => '<p>Testing <b>"after_field"</b> parameter</p>',
+				'after'        => '<p>Testing <b>"after"</b> parameter</p>',
+				'after_row'    => '<p>Testing <b>"after_row"</b> parameter</p>',
 			),
 		),
 	);
@@ -416,7 +443,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 				'desc'    => __( 'field description (optional)', 'cmb2' ),
 				'id'      => $prefix . 'bg_color',
 				'type'    => 'colorpicker',
-				'default' => '#ffffff'
+				'default' => '#ffffff',
 			),
 		)
 	);
