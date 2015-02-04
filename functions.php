@@ -194,7 +194,7 @@ add_action( 'admin_init', 'tk_knight_hide_editor' );
 
 function tk_knight_hide_editor() {
 
-	if ( ! class_exists( 'cmb2_bootstrap_200beta' ) )
+	if ( ! class_exists( 'CMB2' ) )
 		return; // if we don't have custom meta boxes, we have no method of data entry
 
 	// If we aren't editing a post, then we shouldn't bother
