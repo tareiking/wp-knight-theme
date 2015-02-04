@@ -197,8 +197,14 @@ function tk_knight_hide_editor() {
 	if ( ! class_exists( 'cmb2_bootstrap_200beta' ) )
 		return; // if we don't have custom meta boxes, we have no method of data entry
 
-	$post_id = $_GET[ 'post' ] ? $_GET[ 'post' ] : $_POST[ 'post_ID' ] ;
-	if( !isset( $post_id ) ) return;
+	// If we aren't editing a post, then we shouldn't bother
+	if ( isset ( $_GET[ 'post' ] ) ) {
+		$post_id = $_GET[ 'post' ];
+	} elseif ( isset( $_GET[ 'post_ID' ] ) ) {
+		$post_id = $_GET[ 'post_ID' ];
+	} else {
+		return;
+	}
 
 	$template_file = get_post_meta( $post_id, '_wp_page_template', true );
 
