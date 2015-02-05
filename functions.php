@@ -185,3 +185,31 @@ function tk_knight_filter_folio(){
 }
 
 add_filter( 'tk_knight_filter_portfolio_query', 'tk_knight_filter_folio' );
+
+/**
+ * Hide editor for showcase page template
+ *
+ */
+add_action( 'admin_init', 'tk_knight_hide_editor' );
+
+function tk_knight_hide_editor() {
+
+	if ( ! class_exists( 'CMB2' ) )
+		return; // if we don't have custom meta boxes, we have no method of data entry
+
+	// If we aren't editing a post, then we shouldn't bother
+	if ( isset ( $_GET[ 'post' ] ) ) {
+		$post_id = $_GET[ 'post' ];
+	} elseif ( isset( $_GET[ 'post_ID' ] ) ) {
+		$post_id = $_GET[ 'post_ID' ];
+	} else {
+		return;
+	}
+
+	$template_file = get_post_meta( $post_id, '_wp_page_template', true );
+
+	if( $template_file == 'templates/showcase.php' ){
+		remove_post_type_support( 'page', 'editor' );
+	}
+
+}
