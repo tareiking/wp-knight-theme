@@ -87,3 +87,21 @@ function tk_knight_setup_author() {
 	}
 }
 add_action( 'wp', 'tk_knight_setup_author' );
+
+
+/**
+ * Fix the Archive Widget post count
+ */
+function tk_knight_cat_count_span($links) {
+  $links = str_replace('</a> (', ' (', $links);
+  $links = str_replace(')', ')</a>', $links);
+  return $links;
+}
+add_filter('wp_list_categories', 'tk_knight_cat_count_span');
+
+function tk_knight_archive_count_span($links) {
+  $links = str_replace('</a>&nbsp;(', ' (', $links);
+  $links = str_replace(')', ')</a>', $links);
+  return $links;
+}
+add_filter('get_archives_link', 'tk_knight_archive_count_span');

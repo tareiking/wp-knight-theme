@@ -11,3 +11,12 @@
 .widget_search .search-submit {
 	display: none;
 }
+
+#secondary {
+	.widget {
+		ul,
+		ol {
+			margin-left: 1.5em; 
+		}
+	}
+}
