@@ -13,6 +13,8 @@
 
 get_header(); ?>
 
+	<div id="content" class="hfeed site-content container">
+
 	<div id="primary" class="content-area">
 				
 		<div class="col-xs-12 col-md-9">
@@ -44,7 +46,7 @@ get_header(); ?>
 
 			</main><!-- #main -->
 
-		</div>
+		</div><!-- .col -->
 
 	</div><!-- #primary -->
 
