@@ -71,6 +71,8 @@ function tk_knight_setup() {
 	 * Add default image sizes
 	 */
 	add_image_size( 'folio-isotope', 360, 270, true );
+	add_image_size( 'thumbnail', 275, 150, true );
+
 }
 endif; // tk_knight_setup
 add_action( 'after_setup_theme', 'tk_knight_setup' );
