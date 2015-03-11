@@ -6,7 +6,8 @@
   "author": "Tarei King",
   "license": "GPLv2",
   "devDependencies": {
-    "gulp": "^3.8.10",
+    "browser-sync": "^2.2.3",
+    "gulp": "^3.8.11",
     "gulp-concat": "^2.4.1",
     "gulp-jshint": "^1.9.0",
     "gulp-rename": "^1.2.0",
